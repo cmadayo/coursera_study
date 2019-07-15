@@ -34,9 +34,9 @@ X = np.insert(X, 0, 1, axis=1)
 initial_theta = np.zeros((n + 1))
 
 # wrapper for fmin
-costFunction_wrapper = lambda theta, X, y: cost_function.get_cost_grad(theta, X, y)[0]
+cost_function_wrapper = lambda theta, X, y: cost_function.get_cost_grad(theta, X, y)[0]
 # minimize costFunction's cost
-result = fmin(costFunction_wrapper, initial_theta, args=(X, y,),full_output=True, disp=False)
+result = fmin(cost_function_wrapper, initial_theta, args=(X, y,),full_output=True, disp=False)
 # minimize costFunction's cost result
 theta, cost = result[0], result[1]
 
