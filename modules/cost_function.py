@@ -1,12 +1,12 @@
 from typing import List, Tuple
 import numpy as np
-import sigmoid
+from . import sigmoid
 
 # type define
 Vector = List[float]
 Matrix = List[Vector]
 
-def execute(theta:Vector, X:Matrix, y:Vector) -> Tuple[float, Vector]:
+def get_cost_grad(theta:Vector, X:Matrix, y:Vector) -> Tuple[float, Vector]:
     # check columns and rows
     if X.shape[1] != theta.shape[0]:
         print('X columns and theta rows must be same')

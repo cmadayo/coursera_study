@@ -7,16 +7,15 @@ Vector = List[float]
 Matrix = List[Vector]
 
 # X must be 2 columns
-# y must be 1 columns(vector)
-# X and y must be same rows
-def plot(X: List[Vector], y: Vector) -> None:
+# X and y must rows be same num
+def scatter_plot(X: List[Vector], y: Vector) -> None:
     # check columns and rows
     if X.shape[1] != 2:
         print('X must be 2 columns')
         exit()
 
     elif X.shape[0] != y.shape[0]:
-        print('X and y must be same rows')
+        print('X and y must rows be same num')
         exit()
 
     # find positive data and negative data
@@ -29,3 +28,20 @@ def plot(X: List[Vector], y: Vector) -> None:
 
     # show
     plt.show()
+
+# X columns and theta rows must be same num
+# X and y must be same rows num
+def scatter_plot_border(theta:Vector, X:Matrix, y:Vector) -> None:
+    # check columns and rows
+    if X.shape[1] != theta.shape[0]:
+        print('X columns and theta rows must be same num')
+        exit()
+
+    elif X.shape[0] != y.shape[0]:
+        print('X and y rows must be same num')
+        exit()
+
+    plot_x = np.array([np.min(X[:, 1]) - 2, np.max(X[:, 1]) + 2])
+    plot_y = (-1 / theta[2]) * (theta[1] * plot_x + theta[0])
+    plt.plot(plot_x, plot_y)
+    scatter_plot(X[:, 1:3], y)
