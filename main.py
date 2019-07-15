@@ -21,7 +21,7 @@ X = data[:,0:2]         # 100 * 2
 y = data[:,2]           # 100 * 1
 
 # plot data
-plotData.scatter_plot(X, y)
+plot_data.scatter_plot(X, y)
 
 # size analysis
 m = X.shape[0]
@@ -41,7 +41,7 @@ result = fmin(costFunction_wrapper, initial_theta, args=(X, y,),full_output=True
 theta, cost = result[0], result[1]
 
 # plot boundary
-plotData.scatter_plot_border(theta, X, y)
+plot_data.scatter_plot_border(theta, X, y)
 
 # calculate accuracy
 p = predict.execute(theta, X, 0.5)
