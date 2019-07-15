@@ -3,7 +3,7 @@ import pandas as pd
 import csv
 import matplotlib.pyplot as plt
 from scipy.optimize import fmin
-from modules import plotData, predict, cost_function
+from modules import plot_data, predict, cost_function
 
 # training data
 training_datafile = './training_data/ex2data1.txt'
