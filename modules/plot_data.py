@@ -60,3 +60,12 @@ def plot_decision_boundary(theta, X, y):
     plt.contour(u, v, z, levels=[0],)
 
     scatter_plot(X[:, 1:3], y)
+
+# copy paste from internet...
+def mat_data_plot(selected_array:Matrix, input_x_size:int, input_y_size:int) -> None:
+    fig = plt.figure(figsize = (10, 10))
+    fig.subplots_adjust(hspace=0.05, wspace=0.05)
+    for i in range(100):
+        ax = fig.add_subplot(10, 10, i + 1, xticks=[], yticks=[])
+        ax.imshow(selected_array[i].reshape((20, 20)).T, cmap='gray')
+    plt.show()
