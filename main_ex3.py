@@ -6,7 +6,6 @@ from scipy.optimize import fmin
 from modules import plot_data, predict, cost_function, one_vs_all
 from sklearn.linear_model import LogisticRegression
 
-
 # training data
 training_datafile = './training_data/ex3data1'
 
@@ -37,8 +36,8 @@ X_temp = np.c_[np.ones((5,1)), np.reshape(np.arange(1, 16), (5, 3), 'F')/10]  # 
 y_temp = (np.array([1, 0, 1, 0, 1]) >= 0.5).astype(np.int)          # 5 * 1    boolean to binary
 lambda_temp = 3
 
-# # ---------------- hand make function start ----------------
-# comment out cuz too slow.... 
+# # ---------------- hand made function start ----------------
+# comment out cuz too slow....
 # (J, grad) = cost_function.get_reg_cost_grad(theta_temp, X_temp, y_temp, lambda_temp)
 # print('My function Result: cost = {}, gradients = {}'.format(J, grad))
 # lambda_value = 0.1
