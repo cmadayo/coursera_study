@@ -2,10 +2,12 @@ from typing import List
 import numpy as np
 import matplotlib.pyplot as plt
 from . import map_feature
+import math
 
 # type define
 Vector = List[float]
 Matrix = List[Vector]
+
 
 # X must be 2 columns
 # X and y must rows be same num
@@ -30,9 +32,10 @@ def scatter_plot(X: List[Vector], y: Vector) -> None:
     # show
     plt.show()
 
+
 # X columns and theta rows must be same num
 # X and y must be same rows num
-def scatter_plot_border(theta:Vector, X:Matrix, y:Vector) -> None:
+def scatter_plot_border(theta: Vector, X: Matrix, y: Vector) -> None:
     # check columns and rows
     if X.shape[1] != theta.shape[0]:
         print('X columns and theta rows must be same num')
@@ -61,11 +64,12 @@ def plot_decision_boundary(theta, X, y):
 
     scatter_plot(X[:, 1:3], y)
 
+
 # copy paste from internet...
-def mat_data_plot(selected_array:Matrix, input_x_size:int, input_y_size:int) -> None:
+def mat_data_plot(matrix: Matrix, x_size: int, y_size: int) -> None:
     fig = plt.figure(figsize = (10, 10))
     fig.subplots_adjust(hspace=0.05, wspace=0.05)
     for i in range(100):
         ax = fig.add_subplot(10, 10, i + 1, xticks=[], yticks=[])
-        ax.imshow(selected_array[i].reshape((20, 20)).T, cmap='gray')
+        ax.imshow(matrix[i].reshape((20, 20)).T, cmap='gray')
     plt.show()

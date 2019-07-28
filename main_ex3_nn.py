@@ -24,7 +24,7 @@ y = np.array
 # load data from mat file
 data = loadmat(training_datafile)
 X = data['X']                               # 5000 * 400
-y = np.reshape(data['y'],(-1,))             # 5000 * 1
+y = np.reshape(data['y'], (-1, ))             # 5000 * 1
 
 m = X.shape[0]
 
