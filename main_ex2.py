@@ -1,7 +1,5 @@
 import numpy as np
 import pandas as pd
-import csv
-import matplotlib.pyplot as plt
 from scipy.optimize import fmin
 from modules import plot_data, predict, cost_function
 

@@ -1,10 +1,5 @@
 import numpy as np
-import pandas as pd
 from scipy.io import loadmat
-import matplotlib.pyplot as plt
-from scipy.optimize import fmin
-from modules import plot_data, predict, cost_function, one_vs_all, predict
-from sklearn.linear_model import LogisticRegression
 from sklearn.neural_network import MLPClassifier
 
 # training data
