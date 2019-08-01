@@ -15,8 +15,8 @@ X = np.array
 y = np.array
 
 data = csvdata.values
-X = data[:,0:2]         # 100 * 2
-y = data[:,2]           # 100 * 1
+X = data[:, 0:2]         # 100 * 2
+y = data[:, 2]           # 100 * 1
 
 # plot data
 plot_data.scatter_plot(X, y)
